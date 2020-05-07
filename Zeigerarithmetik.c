@@ -1,3 +1,6 @@
+//datum: 07.05.2020
+//autor: Luca Schmidt
+
 #include <stdio.h>
 #include <stdlib.h>
 
