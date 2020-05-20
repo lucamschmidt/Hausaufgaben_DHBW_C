@@ -14,5 +14,7 @@ double realmult(double, double, double, double);
 double imagmult(double, double, double, double);
 double realdiv(double, double, double, double);
 double imagdiv(double, double, double, double);
+double phi(double, double);
+double amount(double, double);
 
 #endif

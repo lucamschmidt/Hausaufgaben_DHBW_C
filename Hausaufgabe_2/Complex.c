@@ -60,25 +60,25 @@ int main(){
         sumreal = add(zahl1com.real, zahl2com.real);
         sumimag = add(zahl1com.imag, zahl2com.imag);
 
-        printf("Summe: %.2f+%.2fi\n",sumreal, sumimag);
+        printf("Summe: %.3f+%.3fi\n",sumreal, sumimag);
 
         //Subtraktion
         diffreal = sub(zahl1com.real, zahl2com.real);
         diffimag = sub(zahl1com.imag, zahl2com.imag);
 
-        printf("Differenz: %.2f+%.2fi\n",diffreal , diffimag);
+        printf("Differenz: %.3f+%.3fi\n",diffreal , diffimag);
 
         //Multiplikation
         productreal = realmult(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
         productimag = imagmult(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
 
-        printf("Produkt: %.2f+%.2fi\n", productreal, productimag);
+        printf("Produkt: %.3f+%.3fi\n", productreal, productimag);
 
         //Division
         quotientreal = realdiv(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
         quotientimag = imagdiv(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
 
-        printf("Quotient: %.2f+%.2fi\n", quotientreal, quotientimag);
+        printf("Quotient: %.3f+%.3fi\n", quotientreal, quotientimag);
     }
 
     if (i == 2)
@@ -87,64 +87,35 @@ int main(){
         //Addition
         sumreal = add(zahl1com.real, zahl2com.real);
         sumimag = add(zahl1com.imag, zahl2com.imag);
-        sumamount = sqrt(sumreal * sumreal + sumimag * sumimag);
-        if(sumreal>0){
-            sumphi = atan(sumimag / sumreal);
-        }else   { 
-            if(sumreal<0 && sumimag>=0)   {
-                sumphi = atan(sumimag / sumreal)+M_PI;
-            }else{
-                    sumphi = atan(sumimag / sumreal)-M_PI; 
-                }
-        }
-        printf("Summe: %.2f*e^i%.2f\n", sumamount, sumphi);
+        sumamount = amount(sumreal, sumimag);
+        sumphi = phi(sumreal, sumimag);
+
+        printf("Summe: %.3f*e^i%.3f\n", sumamount, sumphi);
 
         //Subtraktion
         diffreal = sub(zahl1com.real, zahl2com.real);
         diffimag = sub(zahl1com.imag, zahl2com.imag);
-        diffamount = sqrt(diffreal * diffreal + diffimag * diffimag);
-        diffphi = atan(diffimag / diffreal);
-        if(diffreal>0){
-            diffphi = atan(diffimag / diffreal);
-        }else   { 
-            if(diffreal<0 && diffimag>=0)   {
-                diffphi = atan(diffimag / diffreal)+M_PI;
-            }else{
-                    diffphi = atan(diffimag / diffreal)-M_PI; 
-                }
-        }
+        diffamount = amount(diffreal, diffimag);
+        diffphi = phi(diffreal, diffimag);
 
-        printf("Differenz: %.2f*e^i%.2f\n", diffamount, diffphi);
+
+        printf("Differenz: %.3f*e^i%.3f\n", diffamount, diffphi);
 
         //Multiplikation
         productreal = realmult(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
         productimag = imagmult(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
-        productamount = sqrt(productreal * productreal + productimag * productimag);
-        if(productreal>0){
-            productphi = atan(productimag / productreal);
-        }else   { 
-            if(productreal<0 && productimag>=0)   {
-                productphi = atan(productimag / productreal)+M_PI;
-            }else{
-                    productphi = atan(productimag / productreal)-M_PI; 
-                }
-        }
-        printf("Produkt: %.2f*e^i%.2f\n", productamount, productphi);
+        productamount = amount(productreal, productimag);
+        productphi = phi(productreal, productimag);
+
+        printf("Produkt: %.3f*e^i%.3f\n", productamount, productphi);
 
         //Division
         quotientreal = realdiv(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
         quotientimag = imagdiv(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
-        quotientamount = sqrt(quotientreal * quotientreal + quotientimag * quotientimag);
-        if(quotientreal>0){
-            quotientphi = atan(quotientimag / quotientreal);
-        }else   { 
-            if(quotientreal<0 && quotientimag>=0)   {
-                quotientphi = atan(quotientimag / quotientreal)+M_PI;
-            }else{
-                    quotientphi = atan(quotientimag / quotientreal)-M_PI; 
-                }
-        }
-        printf("Quotient: %.2f*e^i%.2f\n", quotientamount, quotientphi);
+        quotientamount = amount(quotientreal, quotientimag);
+        quotientphi = phi(quotientreal, quotientimag);
+
+        printf("Quotient: %.3f*e^i%.3f\n", quotientamount, quotientphi);
     }
 
     if (i == 3)
@@ -153,65 +124,33 @@ int main(){
         //Addition
         sumreal = add(zahl1com.real, zahl2com.real);
         sumimag = add(zahl1com.imag, zahl2com.imag);
-        sumamount = sqrt(sumreal * sumreal + sumimag * sumimag);
-        sumphi = atan(sumimag / sumreal);
-        if(sumreal>0){
-            sumphi = atan(sumimag / sumreal);
-        }else   { 
-            if(sumreal<0 && sumimag>=0)   {
-                sumphi = atan(sumimag / sumreal)+M_PI;
-            }else{
-                    sumphi = atan(sumimag / sumreal)-M_PI; 
-                }
-        }
-        printf("Summe: %.2f*(cos%.2f + isin%.2f)\n", sumamount, sumphi, sumphi);
+        sumamount = amount(sumreal, sumimag);
+        sumphi = phi(sumreal, sumimag);
+
+        printf("Summe: %.3f*(cos%.3f + isin%.3f)\n", sumamount, sumphi, sumphi);
 
         //Subtraktion
         diffreal = sub(zahl1com.real, zahl2com.real);
         diffimag = sub(zahl1com.imag, zahl2com.imag);
-        diffamount = sqrt(diffreal * diffreal + diffimag * diffimag);
-        if(diffreal>0){
-            diffphi = atan(diffimag / diffreal);
-        }else   { 
-            if(diffreal<0 && diffimag>=0)   {
-                diffphi = atan(diffimag / diffreal)+M_PI;
-            }else{
-                    diffphi = atan(diffimag / diffreal)-M_PI; 
-                }
-        }
+        diffamount = amount(diffreal, diffimag);
+        diffphi = phi(diffreal, diffimag);
         
-        printf("Differenz: %.2f*(cos%.2f + isin%.2f)\n", diffamount, diffphi, diffphi);
+        printf("Differenz: %.3f*(cos%.3f + isin%.3f)\n", diffamount, diffphi, diffphi);
 
         //Multiplikation
         productreal = realmult(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
         productimag = imagmult(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
-        productamount = sqrt(productreal * productreal + productimag * productimag);
-        productphi = atan(productimag / productreal);
-        if(productreal>0){
-            productphi = atan(productimag / productreal);
-        }else   { 
-            if(productreal<0 && productimag>=0)   {
-                productphi = atan(productimag / productreal)+M_PI;
-            }else{
-                    productphi = atan(productimag / productreal)-M_PI; 
-                }
-        }
-        printf("Produkt: %.2f*(cos%.2f + isin%.2f)\n", productamount, productphi, productphi);
+        productamount = amount(productreal, productimag);
+        productphi = phi(productreal, productimag);
+
+        printf("Produkt: %.3f*(cos%.3f + isin%.3f)\n", productamount, productphi, productphi);
 
         //Division
         quotientreal = realdiv(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
         quotientimag = imagdiv(zahl1com.real, zahl1com.imag, zahl2com.real, zahl2com.imag);
-        quotientamount = sqrt(quotientreal * quotientreal + quotientimag * quotientimag);
-        quotientphi = atan(quotientimag / quotientreal);
-        if(quotientreal>0){
-            quotientphi = atan(quotientimag / quotientreal);
-        }else   { 
-            if(quotientreal<0 && quotientimag>=0)   {
-                quotientphi = atan(quotientimag / quotientreal)+M_PI;
-            }else{
-                    quotientphi = atan(quotientimag / quotientreal)-M_PI; 
-                }
-        }
-        printf("Quotient: %.2f*(cos%.2f + isin%.2f)\n", quotientamount, quotientphi, quotientphi);
+        quotientamount = amount(quotientreal, quotientimag);
+        quotientphi = phi(quotientreal, quotientimag);
+
+        printf("Quotient: %.3f*(cos%.3f + isin%.3f)\n", quotientamount, quotientphi, quotientphi);
     }
 }
