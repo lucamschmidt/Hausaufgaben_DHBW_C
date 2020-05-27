@@ -30,10 +30,10 @@ int main(){
 
     //einlesen der Zahlen als String     
     printf("Geben Sie die erste komplexe Zahl ein (Realteil+Imaginaerteil(negative Werte ohne Klammer, + ist notwendig!)): ");
-    scanf("%s", &zahl1); // JW 2020-05-20: this is technically wrong but will be handled by the compiler. please use >&zahl[0]< or >zahl< same in line 36: -1Pkt
+    scanf("%s", zahl1); // JW 2020-05-20: this is technically wrong but will be handled by the compiler. please use >&zahl[0]< or >zahl< same in line 36: -1Pkt
     printf("Die erste Zahl lautet: %si\n\n", zahl1);
     printf("Geben Sie die zweite komplexe Zahl ein (Realteil+Imaginaerteil(negative Werte ohne Klammer, + ist notwendig!)): ");
-    scanf("%s", &zahl2);
+    scanf("%s", zahl2);
     printf("Die zweite Zahl lautet: %si\n\n", zahl2);
 
     //Strings aufteilen in Real und Imagteil, String zu double und abspeichern in struct
