@@ -189,9 +189,114 @@ void exitFcn(listElement *start){
 }
 
 void sortList(listElement *start){
-	
-	printf("\n>>sortList fcn is tbd.\n\n");
-    
+
+	int choice = 0;
+
+    printf("sort by: \n");
+    printf("[1] ... lastname\n");
+    printf("[2] ... firstname\n");
+    printf("[3] ... age\n");
+    scanf("%d", &choice);
+
+    switch(choice){
+
+        case 1:
+
+        { 
+        int k = 0;
+        int i = 0; 
+        char temp[5];
+        listElement * currElem = start;
+        listElement * sortElem = NULL;  
+        start = start->nextElem;
+  
+        if (start->nextElem == NULL) printf ("\n>> list is empty\n\n");
+        else{
+  
+        do
+        { 
+            k = 0; 
+            currElem = start;             
+
+            while ((currElem->nextElem)->nextElem != sortElem) 
+            { 
+                if (currElem->lastName[0] > (currElem->nextElem)->lastName[0]) 
+                {  
+                    temp[0] = currElem->lastName[0];
+                    currElem->lastName[0] = sortElem->lastName[0];
+                    sortElem->lastName[0] = temp[0];
+                    k = 1; 
+                } 
+                currElem = currElem->nextElem; 
+            } 
+            sortElem = currElem; 
+        } 
+        while (k); 
+        }
+        }
+  
+
+        /*while(currElem->nextElem != NULL){
+
+            for(int i = 0; i <= (strlen(currElem->lastName) || strlen((currElem->lastName)); i++){
+
+                currElem = currElem->nextElem;
+                sortElem1 = currElem->lastName[0];
+                currElem = currElem->nextElem;
+                sortElem2 = currElem->lastName[0];  
+
+                if(sortElem)
+            
+                if(strcmp(sortElem1, sortElem2)>0){
+                    strcpy(temp, sortElem1);            //Platzwechsel wenn links größer als rechts
+                    strcpy(sortElem1, sortElem2);
+                    strcpy(sortElem2, temp);
+                }
+            }
+        }
+    }
+        break; 
+
+        case 2:
+
+        while(currElem->nextElem != NULL){
+
+            for(int i = 0; i <= (strlen(((currElem->nextElem)->nextElem)->firstName) || strlen((currElem->nextElem)->firstName)); i++){
+
+                sortElem = ((currElem->nextElem)->nextElem)->firstName[i];
+                currElem = (currElem->nextElem)->firstName[i];        
+            
+                if(strcmp(currElem, sortElem)>0){
+                    strcpy(temp, currElem);            //Platzwechsel wenn links größer als rechts
+                    strcpy(currElem, sortElem);
+                    strcpy(sortElem, temp);
+                }
+            }
+        }
+
+        break;        
+
+        case 3: 
+
+        while(currElem->nextElem != 0)
+
+            for(int i = 0; i <= getLenOfList(start); i++){
+
+                sortElem = ((currElem->nextElem)->nextElem)->age;
+                currElem = (currElem->nextElem)->age;       
+
+                if(currElem > sortElem){
+                    tempdouble = currElem;            //Platzwechsel wenn links größer als rechts
+                    currElem = sortElem;
+                    sortElem = tempdouble;
+                }
+            }
+        break;
+
+        default: printf("invalid choice\n"); break;
+    */
+    }
+
 }
 
 void stringToLower(char *string) {
