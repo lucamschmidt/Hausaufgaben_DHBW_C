@@ -17,16 +17,16 @@ int main()
 	double Xnew = 0;
 	double Lsg1, Lsg2;
 	double (*FcnPtr)(double);
-	FcnPtr = Fcn;
+	FcnPtr = Fcn(Val1, Val2, Val3, Val4, Exp1, Exp2, X);
 
 	printf("Newton-Raphson-Verfahren:  \n \n");
 	printf("Eingegebene Funktion: (%.1f*X ^ %.1f) + (%.1f*X ^ %.1f) + %.1f*X + %.1f \n\n", Val1, Exp1, Val2, Exp2, Val3, Val4);
 
-	while ((FcnPtr(Val1, Val2, Val3, Val4, Exp1, Exp2, X)) > 0.0000001 || (FcnPtr(Val1, Val2, Val3, Val4, Exp1, Exp2, X)) < -0.000001)
+	while (FcnPtr > 0.0000001 || FcnPtr < -0.000001)
 	{
-		Lsg1 = FcnPtr(Val1, Val2, Val3, Val4, Exp1, Exp2, X);												// Lsg1 = Val1*X ^ Exp1 + Val2*X ^ Exp2 + Val3*X + Val4
+		Lsg1 = FcnPtr;																						// Lsg1 = Val1*X ^ Exp1 + Val2*X ^ Exp2 + Val3*X + Val4
 		
-		Lsg2 = Der(FcnPtr(Val1, Val2, Val3, Val4, Exp1, Exp2, X), X);										// Fcn abgeleitet
+		Lsg2 = Der(FcnPtr, X);																				// Fcn abgeleitet
 
 		Xnew = X - (Lsg1 / Lsg2);																			// Newton-Verfahren
 		X = Xnew;

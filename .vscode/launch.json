@@ -8,7 +8,7 @@
             "name": "(gdb) Starten",
             "type": "cppdbg",
             "request": "launch",
-            "program": "C:\\Users\\Michael\\OneDrive\\Dokumente\\Hochschule\\2.Semester\\PR\\Hausaufgaben_DHBW_C\\Hausaufgabe_3\\a.exe",
+            "program": "C:\\Users\\Michael\\OneDrive\\Dokumente\\Hochschule\\2.Semester\\PR\\Hausaufgaben_DHBW_C\\Hausaufgabe_3+4\\a.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
