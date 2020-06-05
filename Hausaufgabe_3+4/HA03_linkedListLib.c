@@ -316,7 +316,13 @@ JW-2020-05-27:
 > well done (10/10) 
 > how much time did you spend on this exercise? I think it was a litte to easy wasnt it?
 */
-
+/*
+JW-2020-06-05:
+--------------
+> well done (0/10) 
+> Sorting does not work at all !
+> Only switching first char in last name ???
+*/
 
 
 
