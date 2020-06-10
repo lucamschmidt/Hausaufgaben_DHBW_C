@@ -203,36 +203,35 @@ void sortList(listElement *start){
         case 1:
 
         { 
-        int k = 0;
-        int i = 0; 
-        char temp[5];
-        listElement * currElem = start;
-        listElement * sortElem = NULL;  
-        start = start->nextElem;
+            int k = 0;
+            int i = 0; 
+            char temp[100];
+            listElement * currElem = start;
+            listElement * sortElem = start->nextElem->;  
   
-        if (start->nextElem == NULL) printf ("\n>> list is empty\n\n");
-        else{
+            if (start->nextElem == NULL) printf ("\n>> list is empty\n\n");
+            else{
   
-        do
-        { 
-            k = 0; 
-            currElem = start;             
-
-            while ((currElem->nextElem)->nextElem != sortElem) 
+            do
             { 
-                if (currElem->lastName[0] > (currElem->nextElem)->lastName[0]) 
-                {  
-                    temp[0] = currElem->lastName[0];
-                    currElem->lastName[0] = sortElem->lastName[0];
-                    sortElem->lastName[0] = temp[0];
-                    k = 1; 
+                k = 0; 
+                currElem = start->nextElem;             
+
+                while (currElem->nextElem != sortElem) 
+                { 
+                    if (currElem->lastName[0] > (currElem->nextElem)->lastName[0]) 
+                    {  
+                        strcpy(temp, currElem->lastName);
+                        strcpy(currElem->lastName, sortElem->lastName);
+                        strcpy(sortElem->lastName, temp);
+                        k = 1; 
+                    } 
+                    currElem = currElem->nextElem; 
                 } 
-                currElem = currElem->nextElem; 
+                sortElem = currElem; 
             } 
-            sortElem = currElem; 
-        } 
-        while (k); 
-        }
+            while (k); 
+            }
         }
   
 
